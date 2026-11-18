@@ -1,0 +1,30 @@
+# 게시판용 최소 설정 (GitHub Pages 자동 변환 Jekyll)
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+
+# 머리말 없이도 .md 파일을 글로 변환
+optional_front_matter:
+  enabled: true
+  remove_originals: true
+
+# 글의 첫 줄 "# 제목"을 글 제목으로 쓰고 본문에서는 뺀다
+titles_from_headings:
+  enabled: true
+  strip_title: true
+  collections: false
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# board 폴더의 글은 모두 같은 틀(글 화면)을 쓴다
+defaults:
+  - scope:
+      path: "board"
+    values:
+      layout: "board_post"
+
+# 저장소 설명 파일은 홈페이지 글로 변환하지 않는다
+exclude:
+  - README.md
