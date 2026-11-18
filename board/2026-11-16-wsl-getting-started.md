@@ -1,4 +1,6 @@
- WSL에서 Hermes Agent 시작하기 — Docker 격리, Claude·GPT 연결, 첫 협업 시험
+---
+title: "WSL에서 Hermes Agent 시작하기 — Docker 격리, Claude·GPT 연결, 첫 협업 시험"
+---
 
 * 목차
 {:toc}
