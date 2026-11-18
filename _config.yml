@@ -1,14 +1,12 @@
-# 게시판용 최소 설정 (GitHub Pages 자동 변환 Jekyll)
+# 게시판용 설정 (GitHub Pages 자동 변환 Jekyll)
 plugins:
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
 
-# 머리말 없이도 .md 파일을 글로 변환
 optional_front_matter:
   enabled: true
   remove_originals: true
 
-# 글의 첫 줄 "# 제목"을 글 제목으로 쓰고 본문에서는 뺀다
 titles_from_headings:
   enabled: true
   strip_title: true
@@ -18,13 +16,32 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-# board 폴더의 글은 모두 같은 틀(글 화면)을 쓴다
+# board 폴더의 글은 모두 같은 글 화면 틀을 쓰고, 자료실(폴더)마다 이름을 붙인다
 defaults:
   - scope:
       path: "board"
     values:
       layout: "board_post"
+  - scope:
+      path: "board/k9"
+    values:
+      room_title: "경찰견 전문 지식 자료실"
+      room_url: "/board/k9/"
+  - scope:
+      path: "board/ai"
+    values:
+      room_title: "인공지능 연구 자료실"
+      room_url: "/board/ai/"
+  - scope:
+      path: "board/multi-ai"
+    values:
+      room_title: "멀티 AI 협업 시스템 연구자료실"
+      room_url: "/board/multi-ai/"
+  - scope:
+      path: "board/kb"
+    values:
+      room_title: "연구 지식창고 자료실"
+      room_url: "/board/kb/"
 
-# 저장소 설명 파일은 홈페이지 글로 변환하지 않는다
 exclude:
   - README.md
